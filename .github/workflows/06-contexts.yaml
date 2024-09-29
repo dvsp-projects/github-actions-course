@@ -1,4 +1,4 @@
-run-name: 06 - Contexts | DEBUG - ${{ vars.DB_USER }}  
+run-name: 06 - Contexts | DEBUG - ${{ vars.DB_USER }} and ${{ github.ref }}"
 
 on:
   workflow_dispatch:
