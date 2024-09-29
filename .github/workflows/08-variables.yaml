@@ -8,6 +8,7 @@ env:
   WORKFLOW_VAR: 'I am a workflow env var'
   OVERWRITTEN: 'I will be overwritten'
   UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.UNDEFINED_VAR || 'default value' }}  
+  OVERWRITTEN_VAR: '1111111111111'
     
 jobs:
   build:
@@ -18,7 +19,9 @@ jobs:
       - name: Print Env Variables
         env:
           STEP_VAR: 'I am a step env var'
+          OVERWRITTEN_VAR: '22222222222222'
         run: |
           echo "Step env var: ${{ env.WORKFLOW_VAR }}"
           echo "Step env var: ${{ env.JOB_VAR }}"
           echo "Step env var: ${{ env.STEP_VAR }}"
+          echo "Step env var: ${{ env.OVERWRITTEN_VAR }}"
