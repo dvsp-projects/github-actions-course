@@ -13,6 +13,7 @@ on:
 env:
   MY_WORKFLOW_VAR: 'workflow'
   MY_OVERWRITTEN_VAR: 'workflow'
+  MY_OVERWRITTEN_VAR2: 'workflow'
 
 jobs:
   build:
