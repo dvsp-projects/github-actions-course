@@ -8,7 +8,7 @@ on:
       debug:
         description: wqweqweqw
         type: boolean
-        default: false
+        default: true
         
     
 jobs:
