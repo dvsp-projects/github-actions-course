@@ -1,8 +1,12 @@
-run-name: 06 - Contexts | DEBUG - ${{ vars.DB_USER }} and ${{ github.ref }}"
+run-name: 06 - Contexts | DEBUG - var=${{ vars.DB_USER }} and GitHub=${{ github.ref }} inputs=${{ inputs.debug }}"
 
 on:
-  workflow_dispatch:
   push:
+  workflow_dispatch:
+    inputs:
+      debug:
+        type: boolean
+        default: false  
     
 jobs:
   build:
