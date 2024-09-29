@@ -1,4 +1,4 @@
-run-name: 06 - Contexts | DEBUG - ${{ inputs.debug }}
+run-name: 06 - Contexts | DEBUG - ${{ vars.DB_USER }}  
 
 on:
   workflow_dispatch:
