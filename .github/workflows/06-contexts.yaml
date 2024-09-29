@@ -1,12 +1,14 @@
+name: ci
 run-name: 06 - Contexts | DEBUG - var=${{ vars.DB_USER }} and GitHub=${{ github.ref }} inputs=${{ inputs.debug }}"
 
 on:
-  push:
   workflow_dispatch:
-    inputs:
+    inputs:      
       debug:
+        description: wqweqweqw
         type: boolean
-        default: false  
+        default: false
+        
     
 jobs:
   build:
