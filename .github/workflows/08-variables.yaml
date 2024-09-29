@@ -48,10 +48,10 @@ jobs:
           echo "Org var: ${{ vars.MY_ORGANIZATION_VARS }}"
           echo "Repo var: ${{ vars.MY_REPO_VARS }}"     
 
-  echo-undefined:
+  Test:
     runs-on: ubuntu-latest
     steps:
       - name: Print Undefined Variables
         run: |
-          echo "Org var: ${{ vars.UNDEFINED_VAR || 'default value 33333333333' }}            
+          echo "Org var: ${{ vars.UNDEFINED_VAR || 'default value 5555555555' }}"            
           
