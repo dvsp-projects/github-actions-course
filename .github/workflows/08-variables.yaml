@@ -32,8 +32,8 @@ jobs:
     steps:
       - name: Print prod vars
         run: |
-          echo "Point var: ${{ var.TARGET_POINT }}"
-          echo "URL var: ${{ var.TARGET_URL }}"
-          echo "Org var: ${{ var.MY_ORGANIZATION_VARS }}"
-          echo "Repo var: ${{ var.MY_REPO_VARS }}"
+          echo "Point var: ${{ vars.TARGET_POINT }}"
+          echo "URL var: ${{ vars.TARGET_URL }}"
+          echo "Org var: ${{ vars.MY_ORGANIZATION_VARS }}"
+          echo "Repo var: ${{ vars.MY_REPO_VARS }}"
           
