@@ -2,7 +2,8 @@ run-name: 06 - Contexts | DEBUG - ${{ inputs.debug }}
 
 on:
   workflow_dispatch:
-
+  push:
+    
 jobs:
   build:
     runs-on: ubuntu-latest
