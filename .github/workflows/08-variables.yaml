@@ -36,4 +36,15 @@ jobs:
           echo "URL var: ${{ vars.TARGET_URL }}"
           echo "Org var: ${{ vars.MY_ORGANIZATION_VARS }}"
           echo "Repo var: ${{ vars.MY_REPO_VARS }}"
+
+  staging: 
+    runs-on: ubuntu-latest  
+    environment: staging
+    steps:
+      - name: Print prod vars
+        run: |
+          echo "Point var: ${{ vars.TARGET_POINT }}"
+          echo "URL var: ${{ vars.TARGET_URL }}"
+          echo "Org var: ${{ vars.MY_ORGANIZATION_VARS }}"
+          echo "Repo var: ${{ vars.MY_REPO_VARS }}"          
           
