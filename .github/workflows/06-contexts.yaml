@@ -1,5 +1,5 @@
 name: ci
-run-name: 06 - Contexts | DEBUG - var=${{ vars.DB_USER }} and GitHub=${{ github.ref }} inputs=${{ inputs.debug }}"
+run-name: 06 - Contexts | DEBUG - var=${{ vars.DB_USER }} and GitHub=${{ github.ref }} inputs=${{ inputs.debug && 'ON' || 'OFF'}}"
 
 on:
   push:
