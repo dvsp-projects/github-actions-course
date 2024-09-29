@@ -1,0 +1,24 @@
+name: ci-variables
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  WORKFLOW_VAR: 'I am a workflow env var'
+  OVERWRITTEN: 'I will be overwritten'
+  UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.UNDEFINED_VAR || 'default value' }}  
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VAR: 'I am a job env var'
+    steps:
+      - name: Print Env Variables
+        env:
+          STEP_VAR: 'I am a step env var'
+        run: |
+          echo "Step env var: ${{ env.WORKFLOW_VAR }}"
+          echo "Step env var: ${{ env.JOB_VAR }}"
+          echo "Step env var: ${{ env.STEP_VAR }}"

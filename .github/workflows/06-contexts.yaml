@@ -14,6 +14,7 @@ env:
   MY_WORKFLOW_VAR: 'workflow'
   MY_OVERWRITTEN_VAR: 'workflow'
   MY_OVERWRITTEN_VAR2: 'workflow'
+  DB_USER: ${{ vars.DB_USER || 'default_user' }}
 
 jobs:
   build-job:
