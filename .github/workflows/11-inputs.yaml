@@ -8,7 +8,7 @@ on:
         type: boolean
         default: false
         description: Skip deployment 
-      target-environment:
+      target:
         type: environment
         required: true
         description: Which environment the workflow will target
@@ -31,8 +31,8 @@ jobs:
   deploy-job:
     runs-on: ubuntu-latest
     needs: build-job
-    environment: ${{ inputs.target-environment }}
+    environment: ${{ inputs.target }}
     if: ${{ !inputs.dry-run }}
     steps:
       - name: Deploy-step
-        run: echo "Deploying to ${{ inputs:target-environment }}"
+        run: echo "Deploying to ${{ inputs.target }}"
