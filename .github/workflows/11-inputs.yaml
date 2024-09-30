@@ -1,0 +1,21 @@
+name: 11 - Working with Inputs
+
+on: 
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        type: boolean
+        default: false
+        description: Skip deployment and only print build output
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        run: echo step1
+  deploy-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        run: echo step1  
