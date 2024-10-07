@@ -1,0 +1,20 @@
+name: 12-outputs
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest  
+    steps:
+      - name: Print outout
+        run: echo "$GITHUB_OUTPUT"
+        
+      - name: build
+        id: build
+        run: echo "key=value" >> "$GITHUB_OUTPUT"
+  
+  deploy-job:
+    runs-on: ubuntu-latest
+    
