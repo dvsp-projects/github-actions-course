@@ -18,16 +18,20 @@ jobs:
     outputs:
       build-status: ${{ steps.build.outputs.status }}
     steps:
-      - name: build 
+      - name: Build 
         id: build
-        run: echo "status=success" >> "$GITHUB_OUTPUT"
+        run: |
+          echo "status=success" >> "$GITHUB_OUTPUT"
+          echo "============================================"
+          cat "$GITHUB_OUTPUT"
+          echo "============================================"
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
     if: ${{ needs.build.build-status == 'success' }}
     steps:
-      - name: deploy
+      - name: Deploy
         run: echo "Deploying ..."
       
       - name: Print output        
