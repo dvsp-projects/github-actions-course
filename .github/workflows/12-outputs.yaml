@@ -13,20 +13,24 @@ on:
         default: success  
 
 jobs:
-  build-job:
+  build:
     runs-on: ubuntu-latest  
     outputs:
       build-status: ${{ steps.build.outputs.status }}
     steps:
-      - name: build
+      - name: build 
         id: build
         run: echo "status=success" >> "$GITHUB_OUTPUT"
 
-  deploy-job:
+  deploy:
     runs-on: ubuntu-latest
-    needs: build-job
-    if: ${{ needs.build-job.build-status == 'success' }}
+    needs: build
+    if: ${{ needs.build.build-status == 'success' }}
     steps:
       - name: deploy
         run: echo "Deploying ..."
+      
+      - name: Print output        
+        run: |
+          echo "Output: ${{ needs.build.build-status }}"
   
