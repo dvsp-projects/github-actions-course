@@ -10,11 +10,8 @@ jobs:
     steps:
       - name: Print outout
         run: echo "$GITHUB_OUTPUT"
-        
+
       - name: build
         id: build
         run: echo "key=value" >> "$GITHUB_OUTPUT"
   
-  deploy-job:
-    runs-on: ubuntu-latest
-    
